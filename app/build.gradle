@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.loggi.kakaobusclone2023'
+    compileSdk AppConfig.compileSdk
+
+    defaultConfig {
+        applicationId "com.loggi.kakaobusclone2023"
+        minSdk AppConfig.minSdk
+        targetSdk AppConfig.targetSdk
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation project(":data")
+    implementation project(":domain")
+    implementation project(":presentation")
+
+    implementation(AndroidX.CoreKTX)
+    implementation(AndroidX.AppCompat)
+
+    // Hilt
+    implementation(Google.Hilt)
+    kapt(Google.HiltCompiler)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
+}
