@@ -1,4 +1,4 @@
-# <img width="25" alt="kakaobus-clone-2023" src="https://github.com/dev-loggi/kakaobus-clone-2023/assets/33805423/054551f1-8576-42e8-a0ed-86922fccca1b"> KakaoBus Clone (ver.2023) based on Clean Architecture
+# KakaoBus Clone 2023 based on Clean Architecture
 
 
 ## Summary
